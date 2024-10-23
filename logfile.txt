@@ -1,0 +1,1 @@
+CustomUnsupportedOperationException: Operation '%' is not supported.
