@@ -9,21 +9,18 @@ public class File {
         int i;
         FileInputStream fin = null;
         FileOutputStream fout = null;
-        if (args.length !=2){
-            System.out.println("Использование: File откуда куда");
-            return;
-        }
 
         try{
-            fin = new FileInputStream(args[0]);
-            fout = new FileOutputStream(args[1]);
-            do { 
-                i = fin.read();
-                fout.write(i);
-            } while (i != -1);
+             fin = new FileInputStream(args[0]);
+             fout = new FileOutputStream(args[1]);
+            
         }catch (FileNotFoundException e) {
             System.err.printf("Файл '%s' не найден.\n", args[0]);
         }
+        try {
+            i = fin.read();
+            while (i != -1){fout.write(i);};
+        } 
         catch (IOException e) {
             System.out.printf("Ошибка записи файла: ", e.getMessage());
         }

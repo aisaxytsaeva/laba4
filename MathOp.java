@@ -14,14 +14,4 @@ public  class MathOp{
         }    
     }
 
-    public static void main(String[] args) {
-        try {
-            MathOp oper = new MathOp();
-            MathOp.performOperation("+", 5, 4);
-            MathOp.performOperation("%", 9, 4);
-        } catch (CustomUnsupportedOperationException e) {
-            System.err.println("Error occurred: " + e.getMessage());
-        }
-        
-    }
 }
